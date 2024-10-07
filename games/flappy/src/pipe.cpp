@@ -8,7 +8,7 @@
 #include "resource/resource_manager.hpp"
 
 Pipe::Pipe(std::string name) : Entity(name) {
-  const char *path = "platform/desktop/resources/obstacles/topPipe.png";
+  const char *path = "resources/obstacles/topPipe.png";
   Texture2D pipeSprite = ResourceManager::getInstance().getTexture(path);
 
   addComponent<TransformComponent, TCParams>(TCParams{500, 200, 1});

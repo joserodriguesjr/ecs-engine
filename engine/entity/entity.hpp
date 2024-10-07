@@ -7,7 +7,8 @@
 #include <vector>
 
 #include "component/componentInterface.hpp"
-#include "utils/memory.hpp"
+// #include "utils/memory.hpp"
+#include <memory>
 
 class Entity {
 public:
@@ -21,7 +22,7 @@ public:
    *  addComponent<Component, ComponentParams>(ComponentParams{});
    */
   template <typename T, typename P> void addComponent(P params) {
-    components[typeid(T)] = make_unique<T>(params);
+    components[typeid(T)] = std::make_unique<T>(params);
   }
 
   /**

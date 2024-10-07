@@ -7,7 +7,6 @@
 #include "score/score.hpp"
 
 int main(void) {
-#ifdef DESKTOP
   ScenarioConfig scnCfg(
       "platform/desktop/resources/scenario/floor_complete.png",
       "platform/desktop/resources/scenario/bushes.png",
@@ -19,21 +18,6 @@ int main(void) {
 
   PipeManagerConfig pmCfg("platform/desktop/resources/obstacles/bottomPipe.png",
                           "platform/desktop/resources/obstacles/topPipe.png");
-
-#elif defined(PICO)
-  // ScenarioConfig scnCfg();
-
-  // const char *spritePath = "";
-
-  // PipeManagerConfig pmCfg();
-
-  // dummy files just to test
-  ScenarioConfig scnCfg(".png", ".png", ".png", ".png");
-
-  const char *spritePath = ".png";
-
-  PipeManagerConfig pmCfg(".png", ".png");
-#endif
 
   Renderer &renderer = Renderer::instance();
   Inputer &inputer = Inputer::instance();

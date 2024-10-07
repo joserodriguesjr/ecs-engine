@@ -5,7 +5,7 @@
 #include "component/transform.hpp"
 #include "engine.hpp"
 
-#include "../core/interface/renderer.hpp"
+#include "interface/renderer.hpp"
 
 void GameEngine::run() {
   Renderer::instance().setFPS(60);

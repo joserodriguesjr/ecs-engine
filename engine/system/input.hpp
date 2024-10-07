@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../core/interface/inputer.hpp"
 #include "component/input.hpp"
 #include "component/physics.hpp"
 #include "component/transform.hpp"
+#include "interface/inputer.hpp"
 #include "system/systemInterface.hpp"
 
 // enum class Key { Up, Down, Left, Right };

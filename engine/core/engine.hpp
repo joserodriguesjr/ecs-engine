@@ -12,7 +12,7 @@ public:
    *  engine.addSystem<YourSystem, YourSystemParams>(YourSystemParams{x, y, z})
    */
   template <typename T, typename P> void addSystem(P params) {
-    systems.emplace_back(make_unique<T>(params));
+    systems.emplace_back(std::make_unique<T>(params));
   }
 
   /**
@@ -28,7 +28,7 @@ public:
    *
    */
   template <typename T, typename... Args> void addEntity(Args &&...args) {
-    entities.emplace_back(make_unique<T>(std::forward<Args>(args)...));
+    entities.emplace_back(std::make_unique<T>(std::forward<Args>(args)...));
   }
 
   /**

@@ -2,71 +2,7 @@
 
 #include "color.hpp"
 
-#ifdef DESKTOP
 #include "raylib.h"
-
-#else
-// Image, pixel data stored in CPU memory (RAM)
-typedef struct Image {
-  void *data;  // Image raw data
-  int width;   // Image base width
-  int height;  // Image base height
-  int mipmaps; // Mipmap levels, 1 by default
-  int format;  // Data format (PixelFormat type)
-} Image;
-
-// GlyphInfo, font characters glyphs info
-typedef struct GlyphInfo {
-  int value;    // Character value (Unicode)
-  int offsetX;  // Character offset X when drawing
-  int offsetY;  // Character offset Y when drawing
-  int advanceX; // Character advance position X
-  Image image;  // Character image data
-} GlyphInfo;
-
-// Texture, tex data stored in GPU memory (VRAM)
-typedef struct Texture {
-  unsigned int id; // OpenGL texture id
-  int width;       // Texture base width
-  int height;      // Texture base height
-  int mipmaps;     // Mipmap levels, 1 by default
-  int format;      // Data format (PixelFormat type)
-
-  Texture() : id(0), width(0), height(0), mipmaps(0), format(0) {}
-} Texture;
-
-// Texture2D, same as Texture
-typedef Texture Texture2D;
-
-// Vector2, 2 components
-typedef struct Vector2 {
-  float x; // Vector x component
-  float y; // Vector y component
-} Vector2;
-
-// Rectangle, 4 components
-typedef struct Rectangle {
-  float x;      // Rectangle top-left corner position x
-  float y;      // Rectangle top-left corner position y
-  float width;  // Rectangle width
-  float height; // Rectangle height
-} Rectangle;
-
-// Font, font texture and GlyphInfo array data
-typedef struct Font {
-  int baseSize;      // Base size (default chars height)
-  int glyphCount;    // Number of glyph characters
-  int glyphPadding;  // Padding around the glyph characters
-  Texture2D texture; // Texture atlas containing the glyphs
-  Rectangle *recs;   // Rectangles in texture for the glyphs
-  GlyphInfo *glyphs; // Glyphs info data
-
-  Font()
-      : baseSize(0), glyphCount(0), glyphPadding(0), texture(), recs(nullptr),
-        glyphs(nullptr) {}
-} Font;
-
-#endif
 
 class Renderer {
 public:

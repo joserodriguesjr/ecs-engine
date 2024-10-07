@@ -1,7 +1,6 @@
 #pragma once
 
 #include "componentInterface.hpp"
-
 #include "interface/color.hpp"
 #include <vector>
 

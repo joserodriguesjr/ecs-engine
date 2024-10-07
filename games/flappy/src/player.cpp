@@ -1,10 +1,10 @@
 #include <iostream>
 #include <vector>
 
-#include "component/animation.hpp"
 #include "player.hpp"
 #include "sprite.hpp"
 
+#include "component/animation.hpp"
 #include "component/collision.hpp"
 #include "component/input.hpp"
 #include "component/physics.hpp"
@@ -15,7 +15,7 @@
 #include "system/render.hpp"
 
 Player::Player(std::string name) : Entity(name) {
-  const char *path = "platform/desktop/resources/flappy/flappy_mov_red_big.png";
+  const char *path = "resources/flappy/flappy_mov_red_big.png";
   Image playerImage = ResourceManager::getInstance().getImage(path);
   std::vector<Texture2D> textures = Sprite::loadSprites(playerImage, 3);
 

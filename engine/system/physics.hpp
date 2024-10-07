@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../core/interface/renderer.hpp"
 #include "component/physics.hpp"
 #include "component/transform.hpp"
+#include "interface/renderer.hpp"
 #include "system/systemInterface.hpp"
 
 struct PSParams {
